@@ -27,7 +27,7 @@ fun main() {
     val wellington: Usuario = Usuario("Wellington")
 
     val listaConteudosAndroid = getListaConteudo("Android")
-    println(listaConteudosAndroid)
+    //println(listaConteudosAndroid)
     val listaConteudosBackEnd = getListaConteudo("Backend")
     val listaConteudosFrontEnd = getListaConteudo("Frontend")
 
@@ -35,26 +35,35 @@ fun main() {
     println(formacao)
 }
 
-fun getListaConteudo(seguimento: String): mutableListOf<ConteudoEducacional> {
+fun getListaConteudo(seguimento: String): List<ConteudoEducacional> {
     when(seguimento) {
-        "Android" -> mutableListOf<ConteudoEducacional>(
-    ConteudoEducacional("Fundamentos em Kotlin", 200),
-    ConteudoEducacional("Android 1"),
-    ConteudoEducacional("Android 2", 35),
-    ConteudoEducacional("Android 3", 50)
-    )
-        "Backend" -> mutableListOf<ConteudoEducacional>(
-    ConteudoEducacional("Fundamentos em Java", 240),
-    ConteudoEducacional("Backend 1"),
-    ConteudoEducacional("Backend 2", 55),
-    ConteudoEducacional("Backend 3", 50)
-    )
-        "Frontend" -> mutableListOf<ConteudoEducacional>(
-    ConteudoEducacional("Fundamentos em JavaScript", 180),
-    ConteudoEducacional("Frontend 1"),
-    ConteudoEducacional("Frontend 2", 25),
-    ConteudoEducacional("Frontend 3", 40)
-    )
-        else -> println("Formação não definida")
+        "Android" -> {
+             return mutableListOf<ConteudoEducacional>(
+             ConteudoEducacional("Fundamentos em Kotlin", 200),
+             ConteudoEducacional("Android 1"),
+             ConteudoEducacional("Android 2", 35),
+             ConteudoEducacional("Android 3", 50)
+    )}
+        "Backend" -> {
+            return mutableListOf<ConteudoEducacional>(
+            ConteudoEducacional("Fundamentos em Java", 240),
+            ConteudoEducacional("Backend 1"),
+            ConteudoEducacional("Backend 2", 55),
+            ConteudoEducacional("Backend 3", 50)
+    )}
+        "Frontend" -> {
+            return mutableListOf<ConteudoEducacional>(
+            ConteudoEducacional("Fundamentos em JavaScript", 180),
+            ConteudoEducacional("Frontend 1"),
+            ConteudoEducacional("Frontend 2", 25),
+            ConteudoEducacional("Frontend 3", 40)
+    )}
+        else -> {
+            return mutableListOf<ConteudoEducacional>(
+            ConteudoEducacional("Curso padrão"),
+            ConteudoEducacional("Padrão 1"),
+            ConteudoEducacional("Padrão 2"),
+            ConteudoEducacional("Padrão 3")
+        )}
     }
 }
