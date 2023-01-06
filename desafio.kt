@@ -49,7 +49,7 @@ fun main() {
 }
 
 fun getListaConteudoBasico(stackDeDesenvolvimento: StackDesenvolvimento): List<ConteudoEducacional> {
-    when (seguimento) {
+    when (stackDeDesenvolvimento) {
         ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin e seus fundamentos"),
@@ -80,8 +80,8 @@ fun getListaConteudoBasico(stackDeDesenvolvimento: StackDesenvolvimento): List<C
     }
 }
 
-fun getListaConteudoIntermediario(seguimento: String): List<ConteudoEducacional> {
-    when (seguimento) {
+fun getListaConteudoIntermediario(stackDeDesenvolvimento: StackDesenvolvimento): List<ConteudoEducacional> {
+    when (stackDeDesenvolvimento) {
         ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin Intermediário", 200),
@@ -113,8 +113,8 @@ fun getListaConteudoIntermediario(seguimento: String): List<ConteudoEducacional>
     }
 }
 
-fun getListaConteudoAvançado(seguimento: String): List<ConteudoEducacional> {
-    when (seguimento) {
+fun getListaConteudoAvançado(stackDeDesenvolvimento: StackDesenvolvimento): List<ConteudoEducacional> {
+    when (stackDeDesenvolvimento) {
         ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin Avançado", 45),
