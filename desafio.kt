@@ -2,6 +2,8 @@
 
 enum class Nivel { BASICO, INTERMEDIARIO, AVANÇADO }
 
+enum class StackDesenvolvimento { ANDROID, BACKEND, FRONTEND }
+
 data class Usuario(val nome: String)
 
 data class ConteudoEducacional(val nome: String, val duracao: Int = 60)
@@ -24,9 +26,9 @@ fun main() {
     val lucas: Usuario = Usuario("Lucas")
     val wellington: Usuario = Usuario("Wellington")
 
-    val listaConteudosAndroid: List<ConteudoEducacional> = getListaConteudoBasico("Android")
-    val listaConteudosFrontEnd: List<ConteudoEducacional> = getListaConteudoIntermediario("Frontend")
-    val listaConteudosBackEnd: List<ConteudoEducacional> = getListaConteudoAvançado("Backend")
+    val listaConteudosAndroid: List<ConteudoEducacional> = getListaConteudoBasico(ANDROID)
+    val listaConteudosFrontEnd: List<ConteudoEducacional> = getListaConteudoIntermediario(FRONTEND)
+    val listaConteudosBackEnd: List<ConteudoEducacional> = getListaConteudoAvançado(BACKEND)
 
     val formacaoAndroid: Formacao = Formacao("Android", listaConteudosAndroid, Nivel.BASICO)
     val formacaoFrontEnd: Formacao = Formacao("Frontend", listaConteudosFrontEnd, Nivel.INTERMEDIARIO)
@@ -46,23 +48,23 @@ fun main() {
     println("$formacaoBackEnd \n Inscritos: ${formacaoBackEnd.inscritos}")
 }
 
-fun getListaConteudoBasico(seguimento: String): List<ConteudoEducacional> {
+fun getListaConteudoBasico(stackDeDesenvolvimento: StackDesenvolvimento): List<ConteudoEducacional> {
     when (seguimento) {
-        "Android" -> {
+        ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin e seus fundamentos"),
                 ConteudoEducacional("Android Básico")
             )
         }
 
-        "Backend" -> {
+        BACKEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Java e seus fundamentos", 240),
                 ConteudoEducacional("Backend Básico", 65)
             )
         }
 
-        "Frontend" -> {
+        FRONTEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("JavaScript e seus fundamentos", 180),
                 ConteudoEducacional("Frontend Básico")
@@ -80,21 +82,21 @@ fun getListaConteudoBasico(seguimento: String): List<ConteudoEducacional> {
 
 fun getListaConteudoIntermediario(seguimento: String): List<ConteudoEducacional> {
     when (seguimento) {
-        "Android" -> {
+        ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin Intermediário", 200),
                 ConteudoEducacional("Android Intermediário", 35)
             )
         }
 
-        "Backend" -> {
+        BACKEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Java Intermediário", 240),
                 ConteudoEducacional("Backend Intermediário", 55)
             )
         }
 
-        "Frontend" -> {
+        FRONTEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("JavaScript Intermediário", 180),
                 ConteudoEducacional("Frontend Intermediário", 25)
@@ -113,21 +115,21 @@ fun getListaConteudoIntermediario(seguimento: String): List<ConteudoEducacional>
 
 fun getListaConteudoAvançado(seguimento: String): List<ConteudoEducacional> {
     when (seguimento) {
-        "Android" -> {
+        ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin Avançado", 45),
                 ConteudoEducacional("Android Avançado", 50)
             )
         }
 
-        "Backend" -> {
+        BACKEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Java Avançado", 240),
                 ConteudoEducacional("Backend Avançado", 50)
             )
         }
 
-        "Frontend" -> {
+        FRONTEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("JavaScript Avançado", 180),
                 ConteudoEducacional("Frontend Avançado", 40)
