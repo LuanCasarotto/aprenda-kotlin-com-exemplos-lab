@@ -26,9 +26,9 @@ fun main() {
     val lucas: Usuario = Usuario("Lucas")
     val wellington: Usuario = Usuario("Wellington")
 
-    val listaConteudosAndroid: List<ConteudoEducacional> = getListaConteudoBasico(ANDROID)
-    val listaConteudosFrontEnd: List<ConteudoEducacional> = getListaConteudoIntermediario(FRONTEND)
-    val listaConteudosBackEnd: List<ConteudoEducacional> = getListaConteudoAvançado(BACKEND)
+    val listaConteudosAndroid: List<ConteudoEducacional> = getListaConteudoBasico(StackDesenvolvimento.ANDROID)
+    val listaConteudosFrontEnd: List<ConteudoEducacional> = getListaConteudoIntermediario(StackDesenvolvimento.FRONTEND)
+    val listaConteudosBackEnd: List<ConteudoEducacional> = getListaConteudoAvançado(StackDesenvolvimento.BACKEND)
 
     val formacaoAndroid: Formacao = Formacao("Android", listaConteudosAndroid, Nivel.BASICO)
     val formacaoFrontEnd: Formacao = Formacao("Frontend", listaConteudosFrontEnd, Nivel.INTERMEDIARIO)
@@ -50,21 +50,21 @@ fun main() {
 
 fun getListaConteudoBasico(stackDeDesenvolvimento: StackDesenvolvimento): List<ConteudoEducacional> {
     when (stackDeDesenvolvimento) {
-        ANDROID -> {
+        StackDesenvolvimento.ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin e seus fundamentos"),
                 ConteudoEducacional("Android Básico")
             )
         }
 
-        BACKEND -> {
+        StackDesenvolvimento.BACKEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Java e seus fundamentos", 240),
                 ConteudoEducacional("Backend Básico", 65)
             )
         }
 
-        FRONTEND -> {
+        StackDesenvolvimento.FRONTEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("JavaScript e seus fundamentos", 180),
                 ConteudoEducacional("Frontend Básico")
@@ -82,21 +82,21 @@ fun getListaConteudoBasico(stackDeDesenvolvimento: StackDesenvolvimento): List<C
 
 fun getListaConteudoIntermediario(stackDeDesenvolvimento: StackDesenvolvimento): List<ConteudoEducacional> {
     when (stackDeDesenvolvimento) {
-        ANDROID -> {
+        StackDesenvolvimento.ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin Intermediário", 200),
                 ConteudoEducacional("Android Intermediário", 35)
             )
         }
 
-        BACKEND -> {
+        StackDesenvolvimento.BACKEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Java Intermediário", 240),
                 ConteudoEducacional("Backend Intermediário", 55)
             )
         }
 
-        FRONTEND -> {
+        StackDesenvolvimento.FRONTEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("JavaScript Intermediário", 180),
                 ConteudoEducacional("Frontend Intermediário", 25)
@@ -115,21 +115,21 @@ fun getListaConteudoIntermediario(stackDeDesenvolvimento: StackDesenvolvimento):
 
 fun getListaConteudoAvançado(stackDeDesenvolvimento: StackDesenvolvimento): List<ConteudoEducacional> {
     when (stackDeDesenvolvimento) {
-        ANDROID -> {
+        StackDesenvolvimento.ANDROID -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Kotlin Avançado", 45),
                 ConteudoEducacional("Android Avançado", 50)
             )
         }
 
-        BACKEND -> {
+        StackDesenvolvimento.BACKEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("Java Avançado", 240),
                 ConteudoEducacional("Backend Avançado", 50)
             )
         }
 
-        FRONTEND -> {
+        StackDesenvolvimento.FRONTEND -> {
             return mutableListOf<ConteudoEducacional>(
                 ConteudoEducacional("JavaScript Avançado", 180),
                 ConteudoEducacional("Frontend Avançado", 40)
