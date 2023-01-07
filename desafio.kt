@@ -14,14 +14,10 @@ data class Formacao(val nome: String, val conteudos: List<ConteudoEducacional>, 
 
     fun matricular(usuario: Usuario) {
         inscritos.add(usuario)
-        // TODO("Utilize o parâmetro $usuario para simular uma matrícula (usar a lista de $inscritos).")
     }
 }
 
 fun main() {
-    // TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
-    // TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
-
     val luan: Usuario = Usuario("Luan")
     val lucas: Usuario = Usuario("Lucas")
     val wellington: Usuario = Usuario("Wellington")
