@@ -140,5 +140,3 @@ fun getListaConteudoAvançado(stackDeDesenvolvimento: StackDesenvolvimento): Lis
         }
     }
 }
-
-// Teste na IDE
